@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS CLF-C02 題庫練習系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-placeholder">
+            <div class="font-sizer">
+                <button id="font-decrease" class="font-btn" title="縮小字型">A-</button>
+                <button id="font-increase" class="font-btn" title="放大字型">A+</button>
+            </div>
+        </div>
+
+        <h1 id="header-title">AWS Certified Cloud Practitioner (CLF-C02) 題庫練習系統</h1>
+        
+        <div class="header-placeholder">
+            <div class="dark-mode-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-switch">
+                    <span class="slider round"></span>
+                </label>
+                <label for="dark-mode-switch">深色模式</label>
+            </div>
+        </div>
+    </header>
+
+    <div id="mode-selector">
+        <h2>請選擇練習模式</h2>
+        <button id="btn-all">全部瀏覽模式</button>
+        <button id="btn-mock-exam">模擬測驗 (50題)</button>
+    </div>
+
+    <main id="quiz-container" class="hidden">
+        <div id="quiz-nav">
+            <button id="back-to-modes-btn" class="btn-secondary">返回模式選擇</button>
+            
+            <div id="progress-indicator">
+                第 <span id="current-q-num">1</span> / <span id="total-q-num">...</span> 題
+            </div>
+            <div id="jump-nav" class="hidden">
+                <input type="number" id="jump-to-q" min="1" placeholder="題號">
+                <button id="jump-btn">跳轉</button>
+            </div>
+        </div>
+
+        <div id="question-card">
+            <h3 id="question-text"></h3>
+            <p id="multi-choice-indicator" class="hidden">（多選題）</p>
+            <div id="options-container">
+                </div>
+            <button id="submit-btn">提交答案</button>
+        </div>
+
+        <div id="feedback" class="hidden">
+            <h2 id="feedback-result"></h2>
+            <p><strong>正確答案：</strong> <span id="correct-answer"></span></p>
+            <p><strong>說明：</strong></p>
+            <div id="explanation-text"></div>
+        </div>
+    </main>
+
+    <div id="score-screen" class="hidden">
+        <h2>測驗結束</h2>
+        <p class="score-display">您的分數： <span id="score-value">0 / 100</span></p>
+        <p id="score-details">您回答了 0 題，答對了 0 題。</p>
+        <div class="score-actions">
+            <button id="btn-retry-exam">再次測驗</button>
+            <button id="btn-back-to-menu" class="btn-secondary">返回主選單</button>
+        </div>
+    </div>
+
+    <div id="bottom-nav" class="hidden">
+        <div class="page-nav">
+            <button id="prev-q">上一題</button>
+            <button id="next-q">下一題</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>AWS CLF-C02 題庫練習系統</p>
+    </footer>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
